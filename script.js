@@ -1,14 +1,16 @@
 let massiv = [3, 6, 9, 2];
 
-function filter(arr) {
+function filter(arr, delet) {
   const result = [];
   for (const element of arr) {
-    if(element < 5) {
+    if(delet(element)) {
       result.push(element);
     }
   }
   return result;
 }
 
-console.log(filter(massiv));
+const delet = (num) => num < 5;
+
+console.log(filter(massiv, delet));
 
